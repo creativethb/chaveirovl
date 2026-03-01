@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Filipão Chaveiro — Chaves codificadas e abertura de carros | Vaz Lobo RJ</title>
+  <meta name="description" content="Filipão Chaveiro (Felipe) — Chaves codificadas, abertura de portas e veículos. Atendimento 24h em Vaz Lobo. WhatsApp +55 21 98892-4039." />
+  <meta name="keywords" content="chaveiro vaz lobo, chaveiro 24 horas rio de janeiro, chaves codificadas rio, abertura de carro vaz lobo, filipão chaveiro" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0A0A0A" id="meta-theme" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Filipão Chaveiro — Atendimento 24h | Vaz Lobo RJ" />
+  <meta property="og:description" content="Chaves codificadas, abertura de portas e veículos. Felipe atende 24h em Vaz Lobo e região." />
+  <meta property="og:url" content="https://creativethb.github.io/chaveirovl/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/creativethb/chaveirovl/main/img/logo1.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Filipão Chaveiro — Atendimento 24h | Vaz Lobo RJ" />
+  <meta name="twitter:description" content="Chaves codificadas, abertura de portas e veículos. Atendimento 24h em Vaz Lobo." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            accent: { DEFAULT: '#FFD400', hover: '#FFC107', dim: '#B8960A' },
+            'brand-black': '#0A0A0A',
+            'brand-white': '#FFFFFF',
+            'green-whatsapp': { DEFAULT: '#25D366', hover: '#1EBE5A' },
+            surface: {
+              dark: '#0A0A0A',
+              card: '#141414',
+              'card-hover': '#1C1C1C',
+              elevated: '#1A1A1A',
+              border: '#2A2A2A',
+              light: '#f7f7f7',
+              'light-alt': '#fbfbfb',
+              'light-card': '#FFFFFF',
+            },
+            'text-light': {
+              primary: '#1f1f1f',
+              secondary: '#555555',
+              muted: '#888888',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0; padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      background-color: #0A0A0A; color: #FFFFFF;
+    }
+    .light body, body.is-light { background-color: #f7f7f7; color: #1f1f1f; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #141414; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FFD400; }
+
+    /* Animations */
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,212,0,0.45); }
+      50% { box-shadow: 0 0 0 14px rgba(255,212,0,0); }
+    }
+    @keyframes float-up {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes float-right {
+      0% { transform: translateX(40px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes glow-pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes modal-in {
+      0% { opacity: 0; transform: translateY(30px) scale(0.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes sheet-in {
+      0% { transform: translateY(100%); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes overlay-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes spinner {
+      to { transform: rotate(360deg); }
+    }
+
+    .animate-pulse-glow { animation: pulse-glow 2s infinite; }
+    .animate-float-up { animation: float-up 0.7s ease-out forwards; }
+    .animate-float-right { animation: float-right 0.7s ease-out forwards; }
+    .animate-glow { animation: glow-pulse 3s ease-in-out infinite; }
+    .animate-spin-slow { animation: spin-slow 20s linear infinite; }
+    .animate-modal-in { animation: modal-in 0.35s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .animate-sheet-in { animation: sheet-in 0.4s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .animate-overlay-in { animation: overlay-in 0.25s ease-out forwards; }
+    .animate-spinner { animation: spinner 0.7s linear infinite; }
+
+    /* Text gradient */
+    .text-gradient {
+      background: linear-gradient(135deg, #FFD400 0%, #FFF176 50%, #FFD400 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Card glow */
+    .card-glow { position: relative; overflow: hidden; }
+    .card-glow::before {
+      content: '';
+      position: absolute; top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(255,212,0,0.06) 0%, transparent 70%);
+      opacity: 0; transition: opacity 0.4s ease; pointer-events: none;
+    }
+    .card-glow:hover::before { opacity: 1; }
+
+    /* Micro-hover */
+    .micro-hover { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .micro-hover:hover { transform: translateY(-2px); }
+    .micro-hover:active { transform: translateY(0); }
+
+    /* Light texture */
+    .light-texture { background-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.015) 0%, transparent 80%); }
+
+    /* Focus */
+    *:focus-visible { outline: 2px solid #FFD400; outline-offset: 2px; }
+    ::selection { background-color: #FFD400; color: #0A0A0A; }
+
+    /* Safe area */
+    .safe-area-pb { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+    /* Logo image */
+    .logo-img { object-fit: contain; max-height: 100%; max-width: 100%; }
+
+    /* Modal body lock */
+    body.modal-open { overflow: hidden; touch-action: none; }
+
+    /* Section transition */
+    .section-transition { transition: background-color 0.3s ease; }
+
+    /* Scroll reveal */
+    .scroll-reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+    .scroll-reveal-left {
+      opacity: 0; transform: translateX(-30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .scroll-reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .scroll-reveal-right {
+      opacity: 0; transform: translateX(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .scroll-reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Grid background */
+    .grid-bg {
+      background-image: linear-gradient(rgba(255,212,0,0.3) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(255,212,0,0.3) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Accordion content */
+    .accordion-content {
+      max-height: 0; opacity: 0; overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+    .accordion-content.open { max-height: 300px; opacity: 1; }
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Locksmith",
+    "name": "Filipão Chaveiro",
+    "description": "Chaveiro residencial e automotivo em Vaz Lobo, Rio de Janeiro. Chaves codificadas, abertura de portas e veículos. Atendimento 24h.",
+    "url": "https://creativethb.github.io/chaveirovl/",
+    "telephone": "+5521988924039",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Monsenhor Félix, 64",
+      "addressLocality": "Vaz Lobo",
+      "addressRegion": "RJ",
+      "addressCountry": "BR"
+    },
+    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "$$",
+    "areaServed": "Vaz Lobo, Irajá, Vicente de Carvalho, Rio de Janeiro"
+  }
+  </script>
+
+  <!-- Analytics stub -->
+  <script>window.dataLayer = window.dataLayer || [];</script>
+</head>
+
+<body class="font-body">
+
+<!-- ══════════════════════════════════════════════════════════════
+     HEADER
+     ══════════════════════════════════════════════════════════════ -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" role="banner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 group" aria-label="Filipão Chaveiro - Início">
+      <div class="w-11 h-11 rounded-xl overflow-hidden border-2 border-accent/30 group-hover:border-accent transition-colors shadow-lg shadow-accent/10">
+        <img src="https://raw.githubusercontent.com/creativethb/chaveirovl/main/img/logo1.jpg" alt="Filipão Chaveiro Logo" class="logo-img w-full h-full object-cover" loading="eager" width="44" height="44" />
+      </div>
+      <div class="flex flex-col">
+        <span class="font-heading font-black dark:text-white text-brand-black text-base sm:text-lg leading-tight tracking-tight">
+          FILIPÃO <span class="text-accent">CHAVEIRO</span>
+        </span>
+        <span class="text-[10px] dark:text-white/40 text-text-light-muted font-medium tracking-widest uppercase">24 HORAS</span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-8" aria-label="Navegação principal">
+      <a href="#servicos" class="relative dark:text-white/70 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors group py-1">
+        Serviços <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+      <a href="#diferenciais" class="relative dark:text-white/70 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors group py-1">
+        Diferenciais <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+      <a href="#sobre" class="relative dark:text-white/70 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors group py-1">
+        Sobre <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+      <a href="#faq" class="relative dark:text-white/70 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors group py-1">
+        FAQ <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+      <a href="#contato" class="relative dark:text-white/70 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors group py-1">
+        Contato <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full rounded-full"></span>
+      </a>
+    </nav>
+
+    <!-- Right side -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <!-- Theme toggle -->
+      <button id="theme-toggle" class="w-10 h-10 rounded-xl dark:bg-white/5 bg-gray-100 dark:hover:bg-white/10 hover:bg-gray-200 flex items-center justify-center transition-all group" aria-label="Alternar tema">
+        <i data-lucide="sun" class="w-[18px] h-[18px] text-accent group-hover:rotate-90 transition-transform duration-500 hidden dark:block"></i>
+        <i data-lucide="moon" class="w-[18px] h-[18px] text-text-light-secondary group-hover:-rotate-12 transition-transform duration-500 block dark:hidden"></i>
+      </button>
+
+      <!-- CTA Header -->
+      <button onclick="openContactModal()" class="cta-modal inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-brand-black text-xs font-bold px-4 py-2.5 rounded-xl transition-all shadow-lg shadow-accent/20 hover:shadow-accent/40" aria-label="Fale conosco">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+        <span class="hidden sm:inline">Fale Conosco</span>
+        <span class="sm:hidden">Contato</span>
+      </button>
+
+      <!-- Mobile menu toggle -->
+      <button id="menu-toggle" class="lg:hidden ml-1 dark:text-white text-brand-black p-2 rounded-xl dark:hover:bg-white/10 hover:bg-gray-100 transition-colors" aria-label="Abrir menu" aria-expanded="false">
+        <i data-lucide="menu" class="w-5 h-5" id="menu-icon-open"></i>
+        <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-nav" class="lg:hidden overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+    <nav class="dark:bg-brand-black/98 bg-white/98 backdrop-blur-xl border-t dark:border-white/5 border-gray-200 pb-4 px-4" aria-label="Menu mobile">
+      <a href="#servicos" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 dark:text-white/80 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors rounded-xl dark:hover:bg-white/5 hover:bg-gray-50 my-0.5">
+        Serviços <i data-lucide="arrow-right" class="w-4 h-4 opacity-30"></i>
+      </a>
+      <a href="#diferenciais" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 dark:text-white/80 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors rounded-xl dark:hover:bg-white/5 hover:bg-gray-50 my-0.5">
+        Diferenciais <i data-lucide="arrow-right" class="w-4 h-4 opacity-30"></i>
+      </a>
+      <a href="#sobre" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 dark:text-white/80 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors rounded-xl dark:hover:bg-white/5 hover:bg-gray-50 my-0.5">
+        Sobre <i data-lucide="arrow-right" class="w-4 h-4 opacity-30"></i>
+      </a>
+      <a href="#faq" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 dark:text-white/80 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors rounded-xl dark:hover:bg-white/5 hover:bg-gray-50 my-0.5">
+        FAQ <i data-lucide="arrow-right" class="w-4 h-4 opacity-30"></i>
+      </a>
+      <a href="#contato" class="mobile-nav-link flex items-center justify-between px-4 py-3.5 dark:text-white/80 text-text-light-secondary hover:text-accent text-sm font-medium transition-colors rounded-xl dark:hover:bg-white/5 hover:bg-gray-50 my-0.5">
+        Contato <i data-lucide="arrow-right" class="w-4 h-4 opacity-30"></i>
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════════════════════ -->
+<section class="relative pt-[72px] dark:bg-surface-dark bg-surface-light light-texture overflow-hidden section-transition" aria-label="Seção principal">
+  <!-- Background effects -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl animate-glow"></div>
+    <div class="absolute top-1/2 -left-20 w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 opacity-[0.03] grid-bg"></div>
+    <div class="absolute top-32 right-[15%] w-20 h-20 border border-accent/10 rotate-45 rounded-lg hidden lg:block"></div>
+    <div class="absolute bottom-40 left-[10%] w-16 h-16 border border-accent/10 rotate-12 rounded-full hidden lg:block"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28 lg:py-36">
+    <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+      <!-- Text -->
+      <div class="flex-1 text-center lg:text-left animate-float-up">
+        <div class="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 text-accent text-xs font-bold px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          ATENDIMENTO 24 HORAS — VAZ LOBO E REGIÃO
+        </div>
+
+        <h1 class="font-heading font-black dark:text-white text-brand-black text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tighter">
+          <span class="text-gradient">FILIPÃO</span><br />
+          <span class="text-[0.6em]">CHAVEIRO</span>
+        </h1>
+
+        <h2 class="font-heading font-bold dark:text-white/80 text-text-light-secondary text-lg sm:text-xl md:text-2xl mt-4 mb-6 tracking-tight">
+          Residencial • Automotivo — <span class="text-accent">Atendimento 24h</span>
+        </h2>
+
+        <p class="dark:text-white/50 text-text-light-muted text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
+          Chaveiro credenciado. Vai até você. Abertura de portas e veículos, chaves codificadas com tecnologia de ponta.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+          <button onclick="openContactModal()" class="cta-modal inline-flex items-center justify-center gap-2.5 font-bold rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98] bg-green-whatsapp hover:bg-green-whatsapp-hover text-white shadow-lg shadow-green-whatsapp/20 hover:shadow-green-whatsapp/40 text-base px-8 py-4 group" aria-label="Chamar no WhatsApp">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Chamar no WhatsApp
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </button>
+          <button onclick="openContactModal()" class="cta-modal inline-flex items-center justify-center gap-2.5 font-bold rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98] bg-accent hover:bg-accent-hover text-brand-black shadow-lg shadow-accent/20 hover:shadow-accent/40 text-base px-8 py-4 group" aria-label="Fale Conosco">
+            <i data-lucide="phone" class="w-5 h-5"></i>
+            Fale Conosco
+          </button>
+        </div>
+
+        <p class="dark:text-white/30 text-text-light-muted text-xs mt-5 flex items-center justify-center lg:justify-start gap-1.5">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-accent"></i>
+          Resposta rápida em até 15 minutos
+        </p>
+      </div>
+
+      <!-- Hero icons grid -->
+      <div class="flex-1 flex justify-center lg:justify-end animate-float-right">
+        <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px]">
+          <div class="absolute inset-0 rounded-full border border-accent/10 animate-spin-slow"></div>
+          <div class="absolute inset-3 rounded-full border border-dashed border-accent/5"></div>
+          <div class="absolute inset-4 sm:inset-6 flex items-center justify-center">
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
+              <button onclick="trackEvent('top_icon_click',{icon:'Chaves'});document.querySelector('#servicos').scrollIntoView({behavior:'smooth'})"
+                class="w-28 h-28 sm:w-32 sm:h-32 lg:w-[170px] lg:h-[170px] dark:bg-white/[0.04] bg-white/80 dark:border-white/[0.06] border-gray-200 border backdrop-blur-xl rounded-2xl lg:rounded-3xl flex flex-col items-center justify-center gap-2 sm:gap-3 dark:hover:bg-white/[0.08] hover:bg-white transition-all duration-300 cursor-pointer group shadow-lg dark:shadow-black/20 shadow-gray-200/50 micro-hover" aria-label="Ver serviços de Chaves">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="key-round" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-accent"></i>
+                </div>
+                <span class="dark:text-white/70 text-text-light-secondary text-[10px] sm:text-xs lg:text-sm font-semibold">Chaves</span>
+              </button>
+
+              <button onclick="trackEvent('top_icon_click',{icon:'Automotivo'});document.querySelector('#servicos').scrollIntoView({behavior:'smooth'})"
+                class="w-28 h-28 sm:w-32 sm:h-32 lg:w-[170px] lg:h-[170px] dark:bg-white/[0.04] bg-white/80 dark:border-white/[0.06] border-gray-200 border backdrop-blur-xl rounded-2xl lg:rounded-3xl flex flex-col items-center justify-center gap-2 sm:gap-3 dark:hover:bg-white/[0.08] hover:bg-white transition-all duration-300 cursor-pointer group shadow-lg dark:shadow-black/20 shadow-gray-200/50 micro-hover" aria-label="Ver serviços Automotivo">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="car-front" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-accent"></i>
+                </div>
+                <span class="dark:text-white/70 text-text-light-secondary text-[10px] sm:text-xs lg:text-sm font-semibold">Automotivo</span>
+              </button>
+
+              <button onclick="trackEvent('top_icon_click',{icon:'Residencial'});document.querySelector('#servicos').scrollIntoView({behavior:'smooth'})"
+                class="w-28 h-28 sm:w-32 sm:h-32 lg:w-[170px] lg:h-[170px] dark:bg-white/[0.04] bg-white/80 dark:border-white/[0.06] border-gray-200 border backdrop-blur-xl rounded-2xl lg:rounded-3xl flex flex-col items-center justify-center gap-2 sm:gap-3 dark:hover:bg-white/[0.08] hover:bg-white transition-all duration-300 cursor-pointer group shadow-lg dark:shadow-black/20 shadow-gray-200/50 micro-hover" aria-label="Ver serviços Residencial">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-gradient-to-br from-green-500/20 to-green-500/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="home" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-accent"></i>
+                </div>
+                <span class="dark:text-white/70 text-text-light-secondary text-[10px] sm:text-xs lg:text-sm font-semibold">Residencial</span>
+              </button>
+
+              <button onclick="trackEvent('top_icon_click',{icon:'24 horas'});document.querySelector('#servicos').scrollIntoView({behavior:'smooth'})"
+                class="w-28 h-28 sm:w-32 sm:h-32 lg:w-[170px] lg:h-[170px] dark:bg-white/[0.04] bg-white/80 dark:border-white/[0.06] border-gray-200 border backdrop-blur-xl rounded-2xl lg:rounded-3xl flex flex-col items-center justify-center gap-2 sm:gap-3 dark:hover:bg-white/[0.08] hover:bg-white transition-all duration-300 cursor-pointer group shadow-lg dark:shadow-black/20 shadow-gray-200/50 micro-hover" aria-label="Ver serviços 24 horas">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <i data-lucide="shield" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-accent"></i>
+                </div>
+                <span class="dark:text-white/70 text-text-light-secondary text-[10px] sm:text-xs lg:text-sm font-semibold">24 Horas</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="relative h-16 md:h-24">
+    <svg viewBox="0 0 1440 80" fill="none" class="absolute bottom-0 w-full h-full" preserveAspectRatio="none">
+      <path d="M0 80L60 73.3C120 66.7 240 53.3 360 46.7C480 40 600 40 720 43.3C840 46.7 960 53.3 1080 53.3C1200 53.3 1320 46.7 1380 43.3L1440 40V80H0Z" class="dark:fill-surface-card fill-white"></path>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SERVICES
+     ══════════════════════════════════════════════════════════════ -->
+<section id="servicos" class="dark:bg-surface-card bg-white py-16 md:py-24 section-transition" aria-label="Nossos serviços">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14 scroll-reveal">
+      <span class="inline-flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-[0.2em] mb-3">
+        <span class="w-8 h-px bg-accent"></span> Nossos Serviços <span class="w-8 h-px bg-accent"></span>
+      </span>
+      <h2 class="font-heading font-black dark:text-white text-brand-black text-3xl md:text-4xl lg:text-5xl tracking-tight">
+        Soluções em <span class="text-gradient">Chaveiro</span>
+      </h2>
+      <p class="dark:text-white/40 text-text-light-muted mt-4 max-w-lg mx-auto text-base">
+        Serviços profissionais para residências e veículos com rapidez e garantia.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+      <!-- Service 1: Chaves Codificadas -->
+      <article class="scroll-reveal group relative card-glow dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 md:p-7 dark:border-surface-border/50 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-2xl hover:shadow-xl dark:hover:shadow-accent/5 hover:shadow-accent/10" style="transition-delay:0ms">
+        <span class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider bg-accent/10 text-accent px-2.5 py-1 rounded-full">Popular</span>
+        <div class="w-12 h-12 dark:bg-accent/10 bg-accent/10 group-hover:bg-accent rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/20">
+          <i data-lucide="key-round" class="w-6 h-6 text-accent group-hover:text-brand-black transition-colors duration-300"></i>
+        </div>
+        <h3 class="font-heading font-bold dark:text-white text-brand-black text-lg mb-2">Chaves Codificadas</h3>
+        <p class="dark:text-white/40 text-text-light-muted text-sm leading-relaxed mb-4">Confecção de chaves com chip e transponder para as principais marcas.</p>
+        <ul class="space-y-1.5 mb-5">
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Atendimento no local com equipamento portátil</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Compatível com marcas nacionais e importadas</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Garantia no serviço realizado</li>
+        </ul>
+        <p class="text-[10px] dark:text-white/20 text-text-light-muted mb-3 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Atende Vaz Lobo e região</p>
+        <button onclick="openContactModal()" class="cta-modal inline-flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-bold transition-colors group/link">
+          Chamar no WhatsApp <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform"></i>
+        </button>
+      </article>
+
+      <!-- Service 2: Abertura de Veículos -->
+      <article class="scroll-reveal group relative card-glow dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 md:p-7 dark:border-surface-border/50 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-2xl hover:shadow-xl" style="transition-delay:100ms">
+        <div class="w-12 h-12 dark:bg-accent/10 bg-accent/10 group-hover:bg-accent rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/20">
+          <i data-lucide="car-front" class="w-6 h-6 text-accent group-hover:text-brand-black transition-colors duration-300"></i>
+        </div>
+        <h3 class="font-heading font-bold dark:text-white text-brand-black text-lg mb-2">Abertura de Veículos</h3>
+        <p class="dark:text-white/40 text-text-light-muted text-sm leading-relaxed mb-4">Abertura de carros por injeção eletrônica e controle remoto, sem danos.</p>
+        <ul class="space-y-1.5 mb-5">
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Técnica segura, sem riscar a pintura</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Todos os modelos e anos</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Rapidez — chegamos em até 30 min</li>
+        </ul>
+        <p class="text-[10px] dark:text-white/20 text-text-light-muted mb-3 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Atende Vaz Lobo e região</p>
+        <button onclick="openContactModal()" class="cta-modal inline-flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-bold transition-colors group/link">
+          Chamar no WhatsApp <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform"></i>
+        </button>
+      </article>
+
+      <!-- Service 3: Troca de Segredo -->
+      <article class="scroll-reveal group relative card-glow dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 md:p-7 dark:border-surface-border/50 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-2xl hover:shadow-xl" style="transition-delay:200ms">
+        <div class="w-12 h-12 dark:bg-accent/10 bg-accent/10 group-hover:bg-accent rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/20">
+          <i data-lucide="lock" class="w-6 h-6 text-accent group-hover:text-brand-black transition-colors duration-300"></i>
+        </div>
+        <h3 class="font-heading font-bold dark:text-white text-brand-black text-lg mb-2">Troca de Segredo</h3>
+        <p class="dark:text-white/40 text-text-light-muted text-sm leading-relaxed mb-4">Troca de segredo e manutenção completa de fechaduras residenciais.</p>
+        <ul class="space-y-1.5 mb-5">
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Fechaduras comuns e de alta segurança</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Instalação e manutenção completa</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Atendimento em domicílio</li>
+        </ul>
+        <p class="text-[10px] dark:text-white/20 text-text-light-muted mb-3 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Atende Vaz Lobo e região</p>
+        <button onclick="openContactModal()" class="cta-modal inline-flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-bold transition-colors group/link">
+          Chamar no WhatsApp <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform"></i>
+        </button>
+      </article>
+
+      <!-- Service 4: Abertura de Portas -->
+      <article class="scroll-reveal group relative card-glow dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 md:p-7 dark:border-surface-border/50 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-2xl hover:shadow-xl" style="transition-delay:300ms">
+        <div class="w-12 h-12 dark:bg-accent/10 bg-accent/10 group-hover:bg-accent rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/20">
+          <i data-lucide="home" class="w-6 h-6 text-accent group-hover:text-brand-black transition-colors duration-300"></i>
+        </div>
+        <h3 class="font-heading font-bold dark:text-white text-brand-black text-lg mb-2">Abertura de Portas</h3>
+        <p class="dark:text-white/40 text-text-light-muted text-sm leading-relaxed mb-4">Abertura de portas residenciais com agilidade e sem danificar a fechadura.</p>
+        <ul class="space-y-1.5 mb-5">
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Sem dano à porta ou fechadura</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Atendimento 24h inclusive feriados</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Equipe preparada e discreta</li>
+        </ul>
+        <p class="text-[10px] dark:text-white/20 text-text-light-muted mb-3 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Atende Vaz Lobo e região</p>
+        <button onclick="openContactModal()" class="cta-modal inline-flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-bold transition-colors group/link">
+          Chamar no WhatsApp <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform"></i>
+        </button>
+      </article>
+
+      <!-- Service 5: Conserto de Ignição -->
+      <article class="scroll-reveal group relative card-glow dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 md:p-7 dark:border-surface-border/50 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-2xl hover:shadow-xl" style="transition-delay:400ms">
+        <div class="w-12 h-12 dark:bg-accent/10 bg-accent/10 group-hover:bg-accent rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/20">
+          <i data-lucide="wrench" class="w-6 h-6 text-accent group-hover:text-brand-black transition-colors duration-300"></i>
+        </div>
+        <h3 class="font-heading font-bold dark:text-white text-brand-black text-lg mb-2">Conserto de Ignição</h3>
+        <p class="dark:text-white/40 text-text-light-muted text-sm leading-relaxed mb-4">Reparo de miolo de ignição e porta automotiva para todas as marcas.</p>
+        <ul class="space-y-1.5 mb-5">
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Diagnóstico rápido e preciso</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Peças originais quando possível</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Garantia de funcionamento</li>
+        </ul>
+        <p class="text-[10px] dark:text-white/20 text-text-light-muted mb-3 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Atende Vaz Lobo e região</p>
+        <button onclick="openContactModal()" class="cta-modal inline-flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-bold transition-colors group/link">
+          Chamar no WhatsApp <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform"></i>
+        </button>
+      </article>
+
+      <!-- Service 6: Emergencial 24h -->
+      <article class="scroll-reveal group relative card-glow dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 md:p-7 dark:border-surface-border/50 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-2xl hover:shadow-xl" style="transition-delay:500ms">
+        <span class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider bg-accent/10 text-accent px-2.5 py-1 rounded-full">Urgente</span>
+        <div class="w-12 h-12 dark:bg-accent/10 bg-accent/10 group-hover:bg-accent rounded-xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/20">
+          <i data-lucide="zap" class="w-6 h-6 text-accent group-hover:text-brand-black transition-colors duration-300"></i>
+        </div>
+        <h3 class="font-heading font-bold dark:text-white text-brand-black text-lg mb-2">Emergencial 24h</h3>
+        <p class="dark:text-white/40 text-text-light-muted text-sm leading-relaxed mb-4">Atendimento de emergência a qualquer hora. Chegamos rápido no local.</p>
+        <ul class="space-y-1.5 mb-5">
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Disponível 24 horas, 7 dias por semana</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Tempo médio de chegada: 15–30 min</li>
+          <li class="flex items-start gap-2 text-xs dark:text-white/35 text-text-light-muted"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-accent shrink-0 mt-0.5"></i>Cobertura: Vaz Lobo e região</li>
+        </ul>
+        <p class="text-[10px] dark:text-white/20 text-text-light-muted mb-3 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Atende Vaz Lobo e região</p>
+        <button onclick="openContactModal()" class="cta-modal inline-flex items-center gap-1.5 text-accent hover:text-accent-hover text-sm font-bold transition-colors group/link">
+          Chamar no WhatsApp <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform"></i>
+        </button>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     DIFFERENTIALS (Interactive Accordions)
+     ══════════════════════════════════════════════════════════════ -->
+<section id="diferenciais" class="relative dark:bg-surface-dark bg-surface-light light-texture py-16 md:py-24 section-transition overflow-hidden" aria-label="Diferenciais">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-accent/[0.03] rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14 scroll-reveal">
+      <span class="inline-flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-[0.2em] mb-3">
+        <span class="w-8 h-px bg-accent"></span> Diferenciais <span class="w-8 h-px bg-accent"></span>
+      </span>
+      <h2 class="font-heading font-black dark:text-white text-brand-black text-3xl md:text-4xl lg:text-5xl tracking-tight">
+        Por que confiar no <span class="text-gradient">FILIPÃO</span>?
+      </h2>
+      <p class="dark:text-white/40 text-text-light-muted mt-3 text-base max-w-lg mx-auto">
+        Clique em cada item e descubra por que somos a melhor escolha.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-12" id="differentials-grid">
+      <!-- Diff 1 -->
+      <div class="scroll-reveal" style="transition-delay:0ms">
+        <div class="diff-item group rounded-2xl dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border transition-all duration-300 overflow-hidden">
+          <button onclick="toggleDiff(this)" class="w-full flex flex-col items-center text-center p-5 md:p-6 cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-t-2xl" aria-expanded="false">
+            <div class="diff-icon w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 dark:bg-accent/10 bg-accent/10">
+              <i data-lucide="clock" class="w-7 h-7 md:w-8 md:h-8 text-accent transition-colors duration-300"></i>
+            </div>
+            <h3 class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base mb-1">Atendimento 24h</h3>
+            <p class="dark:text-white/40 text-text-light-muted text-xs">Sempre disponível para emergências</p>
+            <i data-lucide="chevron-down" class="w-4 h-4 mt-2 dark:text-white/20 text-gray-300 transition-transform duration-300 diff-chevron"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 dark:border-surface-border/20 border-gray-100 border-t pt-4 text-center">
+              <p class="dark:text-white/50 text-text-light-secondary text-sm leading-relaxed mb-3">Funcionamos 24 horas por dia, 7 dias por semana, inclusive feriados. Emergências são priorizadas com tempo médio de chegada de 15 a 30 minutos.</p>
+              <p class="text-accent text-xs font-bold mb-4">⏱️ Tempo médio de resposta: 15 min</p>
+              <button onclick="event.stopPropagation();openContactModal()" class="cta-modal inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-brand-black font-bold text-xs px-4 py-2.5 rounded-xl transition-all hover:scale-105">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Chamar no WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diff 2 -->
+      <div class="scroll-reveal" style="transition-delay:80ms">
+        <div class="diff-item group rounded-2xl dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border transition-all duration-300 overflow-hidden">
+          <button onclick="toggleDiff(this)" class="w-full flex flex-col items-center text-center p-5 md:p-6 cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-t-2xl" aria-expanded="false">
+            <div class="diff-icon w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 dark:bg-accent/10 bg-accent/10">
+              <i data-lucide="map-pin" class="w-7 h-7 md:w-8 md:h-8 text-accent transition-colors duration-300"></i>
+            </div>
+            <h3 class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base mb-1">Atendimento no local</h3>
+            <p class="dark:text-white/40 text-text-light-muted text-xs">Vamos até você onde estiver</p>
+            <i data-lucide="chevron-down" class="w-4 h-4 mt-2 dark:text-white/20 text-gray-300 transition-transform duration-300 diff-chevron"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 dark:border-surface-border/20 border-gray-100 border-t pt-4 text-center">
+              <p class="dark:text-white/50 text-text-light-secondary text-sm leading-relaxed mb-3">Nosso técnico vai até a sua residência, veículo ou estabelecimento com todo o equipamento necessário. Sem necessidade de deslocar o carro ou levar a fechadura.</p>
+              <p class="text-accent text-xs font-bold mb-4">📍 Cobertura: Vaz Lobo, Irajá, Vicente de Carvalho e região</p>
+              <button onclick="event.stopPropagation();openContactModal()" class="cta-modal inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-brand-black font-bold text-xs px-4 py-2.5 rounded-xl transition-all hover:scale-105">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Chamar no WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diff 3 -->
+      <div class="scroll-reveal" style="transition-delay:160ms">
+        <div class="diff-item group rounded-2xl dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border transition-all duration-300 overflow-hidden">
+          <button onclick="toggleDiff(this)" class="w-full flex flex-col items-center text-center p-5 md:p-6 cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-t-2xl" aria-expanded="false">
+            <div class="diff-icon w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 dark:bg-accent/10 bg-accent/10">
+              <i data-lucide="award" class="w-7 h-7 md:w-8 md:h-8 text-accent transition-colors duration-300"></i>
+            </div>
+            <h3 class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base mb-1">Profissional credenciado</h3>
+            <p class="dark:text-white/40 text-text-light-muted text-xs">Felipe — profissional experiente</p>
+            <i data-lucide="chevron-down" class="w-4 h-4 mt-2 dark:text-white/20 text-gray-300 transition-transform duration-300 diff-chevron"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 dark:border-surface-border/20 border-gray-100 border-t pt-4 text-center">
+              <p class="dark:text-white/50 text-text-light-secondary text-sm leading-relaxed mb-3">Felipe possui anos de experiência no ramo, com treinamento em chaves codificadas e sistemas de segurança modernos. Profissional de confiança reconhecido na região.</p>
+              <p class="text-accent text-xs font-bold mb-4">🏅 Técnico certificado com equipamento profissional</p>
+              <button onclick="event.stopPropagation();openContactModal()" class="cta-modal inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-brand-black font-bold text-xs px-4 py-2.5 rounded-xl transition-all hover:scale-105">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Chamar no WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diff 4 -->
+      <div class="scroll-reveal" style="transition-delay:240ms">
+        <div class="diff-item group rounded-2xl dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border transition-all duration-300 overflow-hidden">
+          <button onclick="toggleDiff(this)" class="w-full flex flex-col items-center text-center p-5 md:p-6 cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-t-2xl" aria-expanded="false">
+            <div class="diff-icon w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 dark:bg-accent/10 bg-accent/10">
+              <i data-lucide="zap" class="w-7 h-7 md:w-8 md:h-8 text-accent transition-colors duration-300"></i>
+            </div>
+            <h3 class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base mb-1">Rapidez</h3>
+            <p class="dark:text-white/40 text-text-light-muted text-xs">Atendimento ágil e eficiente</p>
+            <i data-lucide="chevron-down" class="w-4 h-4 mt-2 dark:text-white/20 text-gray-300 transition-transform duration-300 diff-chevron"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 dark:border-surface-border/20 border-gray-100 border-t pt-4 text-center">
+              <p class="dark:text-white/50 text-text-light-secondary text-sm leading-relaxed mb-3">Entendemos que situações de emergência exigem agilidade. Por isso, nosso atendimento é focado em resolver seu problema o mais rápido possível, sem comprometer a qualidade.</p>
+              <p class="text-accent text-xs font-bold mb-4">⚡ Média: 15–40 min dependendo do serviço</p>
+              <button onclick="event.stopPropagation();openContactModal()" class="cta-modal inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-brand-black font-bold text-xs px-4 py-2.5 rounded-xl transition-all hover:scale-105">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Chamar no WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diff 5 -->
+      <div class="scroll-reveal" style="transition-delay:320ms">
+        <div class="diff-item group rounded-2xl dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border transition-all duration-300 overflow-hidden">
+          <button onclick="toggleDiff(this)" class="w-full flex flex-col items-center text-center p-5 md:p-6 cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-t-2xl" aria-expanded="false">
+            <div class="diff-icon w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 dark:bg-accent/10 bg-accent/10">
+              <i data-lucide="shield" class="w-7 h-7 md:w-8 md:h-8 text-accent transition-colors duration-300"></i>
+            </div>
+            <h3 class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base mb-1">Segurança e garantia</h3>
+            <p class="dark:text-white/40 text-text-light-muted text-xs">Serviço com garantia</p>
+            <i data-lucide="chevron-down" class="w-4 h-4 mt-2 dark:text-white/20 text-gray-300 transition-transform duration-300 diff-chevron"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 dark:border-surface-border/20 border-gray-100 border-t pt-4 text-center">
+              <p class="dark:text-white/50 text-text-light-secondary text-sm leading-relaxed mb-3">Todos os serviços possuem garantia. Utilizamos técnicas que não danificam portas, fechaduras ou veículos. Equipamentos de última geração para máxima precisão.</p>
+              <p class="text-accent text-xs font-bold mb-4">🔒 Garantia em todos os serviços realizados</p>
+              <button onclick="event.stopPropagation();openContactModal()" class="cta-modal inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-brand-black font-bold text-xs px-4 py-2.5 rounded-xl transition-all hover:scale-105">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Chamar no WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diff 6 -->
+      <div class="scroll-reveal" style="transition-delay:400ms">
+        <div class="diff-item group rounded-2xl dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border transition-all duration-300 overflow-hidden">
+          <button onclick="toggleDiff(this)" class="w-full flex flex-col items-center text-center p-5 md:p-6 cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-t-2xl" aria-expanded="false">
+            <div class="diff-icon w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 dark:bg-accent/10 bg-accent/10">
+              <i data-lucide="users" class="w-7 h-7 md:w-8 md:h-8 text-accent transition-colors duration-300"></i>
+            </div>
+            <h3 class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base mb-1">Carros e residências</h3>
+            <p class="dark:text-white/40 text-text-light-muted text-xs">Cobertura completa</p>
+            <i data-lucide="chevron-down" class="w-4 h-4 mt-2 dark:text-white/20 text-gray-300 transition-transform duration-300 diff-chevron"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 dark:border-surface-border/20 border-gray-100 border-t pt-4 text-center">
+              <p class="dark:text-white/50 text-text-light-secondary text-sm leading-relaxed mb-3">Atendemos tanto veículos (carros, motos, utilitários) quanto residências e estabelecimentos comerciais. Uma única equipe para resolver qualquer problema com chaves e fechaduras.</p>
+              <p class="text-accent text-xs font-bold mb-4">🚗🏠 Automotivo + Residencial + Comercial</p>
+              <button onclick="event.stopPropagation();openContactModal()" class="cta-modal inline-flex items-center gap-1.5 bg-accent hover:bg-accent-hover text-brand-black font-bold text-xs px-4 py-2.5 rounded-xl transition-all hover:scale-105">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Chamar no WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="flex flex-wrap justify-center gap-3 scroll-reveal" style="transition-delay:500ms">
+      <div class="inline-flex items-center gap-2.5 dark:bg-surface-card bg-white dark:border-surface-border border-gray-200 border dark:text-white text-brand-black text-xs font-bold px-5 py-3 rounded-full shadow-sm">
+        <i data-lucide="clock" class="w-4 h-4 text-accent"></i> Atendimento 24h
+      </div>
+      <div class="inline-flex items-center gap-2.5 dark:bg-surface-card bg-white dark:border-surface-border border-gray-200 border dark:text-white text-brand-black text-xs font-bold px-5 py-3 rounded-full shadow-sm">
+        <i data-lucide="map-pin" class="w-4 h-4 text-accent"></i> Atende no local
+      </div>
+      <div class="inline-flex items-center gap-2.5 dark:bg-surface-card bg-white dark:border-surface-border border-gray-200 border dark:text-white text-brand-black text-xs font-bold px-5 py-3 rounded-full shadow-sm">
+        <i data-lucide="shield" class="w-4 h-4 text-accent"></i> Serviço credenciado
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     TESTIMONIALS
+     ══════════════════════════════════════════════════════════════ -->
+<section class="dark:bg-surface-card bg-white py-16 md:py-24 section-transition" aria-label="Depoimentos de clientes">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14 scroll-reveal">
+      <span class="inline-flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-[0.2em] mb-3">
+        <span class="w-8 h-px bg-accent"></span> Depoimentos <span class="w-8 h-px bg-accent"></span>
+      </span>
+      <h2 class="font-heading font-black dark:text-white text-brand-black text-3xl md:text-4xl lg:text-5xl tracking-tight">
+        O que nossos <span class="text-gradient">clientes</span> dizem
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+      <!-- Testimonial 1 -->
+      <article class="scroll-reveal dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 dark:border-surface-border/30 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-xl hover:shadow-lg" style="transition-delay:0ms">
+        <div class="flex gap-0.5 mb-4">
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+        </div>
+        <p class="dark:text-white/60 text-text-light-secondary text-sm leading-relaxed mb-5">&ldquo;Perdi a chave do carro de madrugada e o Felipe chegou em menos de 30 minutos. Serviço impecável e preço justo!&rdquo;</p>
+        <div class="flex items-center gap-3 pt-4 dark:border-surface-border/30 border-gray-100 border-t">
+          <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-brand-black font-black text-sm shadow-md shadow-accent/20">C</div>
+          <div>
+            <p class="font-bold dark:text-white text-brand-black text-sm">Carlos M.</p>
+            <p class="dark:text-white/30 text-text-light-muted text-xs">Vaz Lobo</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 2 -->
+      <article class="scroll-reveal dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 dark:border-surface-border/30 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-xl hover:shadow-lg" style="transition-delay:100ms">
+        <div class="flex gap-0.5 mb-4">
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+        </div>
+        <p class="dark:text-white/60 text-text-light-secondary text-sm leading-relaxed mb-5">&ldquo;Precisei trocar o segredo da minha porta e o atendimento foi excelente. Recomendo demais o Filipão Chaveiro!&rdquo;</p>
+        <div class="flex items-center gap-3 pt-4 dark:border-surface-border/30 border-gray-100 border-t">
+          <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-brand-black font-black text-sm shadow-md shadow-accent/20">A</div>
+          <div>
+            <p class="font-bold dark:text-white text-brand-black text-sm">Ana Paula S.</p>
+            <p class="dark:text-white/30 text-text-light-muted text-xs">Irajá</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 3 -->
+      <article class="scroll-reveal dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 dark:border-surface-border/30 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-xl hover:shadow-lg" style="transition-delay:200ms">
+        <div class="flex gap-0.5 mb-4">
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+        </div>
+        <p class="dark:text-white/60 text-text-light-secondary text-sm leading-relaxed mb-5">&ldquo;Fez a chave codificada do meu Onix na hora. Profissional, pontual e com equipamento de primeira.&rdquo;</p>
+        <div class="flex items-center gap-3 pt-4 dark:border-surface-border/30 border-gray-100 border-t">
+          <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-brand-black font-black text-sm shadow-md shadow-accent/20">R</div>
+          <div>
+            <p class="font-bold dark:text-white text-brand-black text-sm">Roberto F.</p>
+            <p class="dark:text-white/30 text-text-light-muted text-xs">Vicente de Carvalho</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Testimonial 4 -->
+      <article class="scroll-reveal dark:bg-surface-elevated/50 bg-white rounded-2xl p-6 dark:border-surface-border/30 border-gray-100 border dark:hover:border-accent/20 hover:border-accent/30 transition-all duration-500 micro-hover dark:hover:shadow-xl hover:shadow-lg" style="transition-delay:300ms">
+        <div class="flex gap-0.5 mb-4">
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+          <i data-lucide="star" class="w-4 h-4 text-accent fill-accent"></i>
+        </div>
+        <p class="dark:text-white/60 text-text-light-secondary text-sm leading-relaxed mb-5">&ldquo;Trancou a porta de casa num domingo e o Felipe resolveu rapidinho. Atendimento 24h de verdade!&rdquo;</p>
+        <div class="flex items-center gap-3 pt-4 dark:border-surface-border/30 border-gray-100 border-t">
+          <div class="w-10 h-10 bg-accent rounded-xl flex items-center justify-center text-brand-black font-black text-sm shadow-md shadow-accent/20">M</div>
+          <div>
+            <p class="font-bold dark:text-white text-brand-black text-sm">Márcia L.</p>
+            <p class="dark:text-white/30 text-text-light-muted text-xs">Vaz Lobo</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     ABOUT
+     ══════════════════════════════════════════════════════════════ -->
+<section id="sobre" class="relative dark:bg-surface-dark bg-surface-light light-texture py-16 md:py-24 section-transition overflow-hidden" aria-label="Sobre nós">
+  <div class="absolute bottom-0 left-0 w-80 h-80 bg-accent/[0.03] rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+      <!-- Image -->
+      <div class="flex-1 flex justify-center scroll-reveal-left">
+        <div class="relative w-full max-w-sm lg:max-w-md">
+          <div class="absolute -inset-3 bg-gradient-to-br from-accent/20 via-accent/5 to-transparent rounded-3xl"></div>
+          <div class="absolute -top-2 -left-2 w-12 h-12 border-t-2 border-l-2 border-accent rounded-tl-2xl"></div>
+          <div class="absolute -bottom-2 -right-2 w-12 h-12 border-b-2 border-r-2 border-accent rounded-br-2xl"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl dark:shadow-accent/5 shadow-gray-300/30 aspect-[4/5]">
+            <img src="https://raw.githubusercontent.com/creativethb/chaveirovl/main/img/sobre%20mim.jpg" alt="Felipe — Filipão Chaveiro — Técnico credenciado" class="w-full h-full object-cover" loading="lazy" width="400" height="500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center gap-3 bg-brand-black/60 backdrop-blur-md rounded-xl p-3 border border-white/10">
+              <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center shrink-0">
+                <i data-lucide="award" class="w-5 h-5 text-brand-black"></i>
+              </div>
+              <div>
+                <p class="text-white font-bold text-sm">Técnico Credenciado</p>
+                <p class="text-white/50 text-xs">Felipe — FILIPÃO CHAVEIRO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="flex-1 scroll-reveal-right">
+        <span class="inline-flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-[0.2em] mb-3">
+          <span class="w-8 h-px bg-accent"></span> Sobre nós
+        </span>
+        <h2 class="font-heading font-black dark:text-white text-brand-black text-3xl md:text-4xl lg:text-5xl mb-8 tracking-tight">
+          Conheça o <span class="text-gradient">FILIPÃO</span>
+        </h2>
+
+        <div class="space-y-5 dark:text-white/50 text-text-light-secondary leading-relaxed text-base">
+          <p>O <strong class="dark:text-white text-brand-black font-bold">FILIPÃO CHAVEIRO</strong> é uma equipe local especializada em soluções residenciais e automotivas. Com equipamentos modernos e atendimento rápido, Felipe atende Vaz Lobo e região 24 horas por dia.</p>
+          <p>Nossos serviços incluem confecção de chaves codificadas, abertura de veículos, troca de segredo e manutenção de fechaduras. Trabalhamos com as principais marcas nacionais e importadas.</p>
+          <p>Com anos de experiência no ramo, Felipe construiu uma reputação sólida baseada em confiança, pontualidade e preço justo. Quando você tranca a porta ou perde a chave do carro, pode contar com a gente.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-4 mt-8 mb-8">
+          <div class="text-center dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-xl p-4 shadow-sm">
+            <p class="font-heading font-black text-accent text-xl md:text-2xl">24h</p>
+            <p class="dark:text-white/40 text-text-light-muted text-xs font-medium mt-1">Disponível</p>
+          </div>
+          <div class="text-center dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-xl p-4 shadow-sm">
+            <p class="font-heading font-black text-accent text-xl md:text-2xl">15min</p>
+            <p class="dark:text-white/40 text-text-light-muted text-xs font-medium mt-1">Resposta</p>
+          </div>
+          <div class="text-center dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-xl p-4 shadow-sm">
+            <p class="font-heading font-black text-accent text-xl md:text-2xl">100%</p>
+            <p class="dark:text-white/40 text-text-light-muted text-xs font-medium mt-1">Garantia</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <button onclick="openContactModal()" class="cta-modal inline-flex items-center justify-center gap-2.5 font-bold rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98] bg-green-whatsapp hover:bg-green-whatsapp-hover text-white shadow-lg shadow-green-whatsapp/20 text-sm px-6 py-3.5">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> Falar com Felipe
+          </button>
+          <button onclick="openContactModal()" class="cta-modal inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-brand-black font-bold text-sm px-6 py-3.5 rounded-xl shadow-lg shadow-accent/20 transition-all hover:scale-[1.02]">
+            <i data-lucide="phone" class="w-4 h-4"></i> (21) 98892-4039
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     FAQ
+     ══════════════════════════════════════════════════════════════ -->
+<section id="faq" class="dark:bg-surface-card bg-white py-16 md:py-24 section-transition" aria-label="Perguntas frequentes">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14 scroll-reveal">
+      <span class="inline-flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-[0.2em] mb-3">
+        <span class="w-8 h-px bg-accent"></span> FAQ <span class="w-8 h-px bg-accent"></span>
+      </span>
+      <h2 class="font-heading font-black dark:text-white text-brand-black text-3xl md:text-4xl lg:text-5xl tracking-tight">
+        Perguntas <span class="text-gradient">Frequentes</span>
+      </h2>
+    </div>
+
+    <div class="space-y-3" id="faq-list">
+      <!-- FAQ 1 -->
+      <div class="scroll-reveal faq-item dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-2xl overflow-hidden transition-all duration-300" style="transition-delay:0ms">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-6 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-2xl" aria-expanded="false">
+          <div class="flex items-center gap-4 pr-4">
+            <span class="shrink-0 w-8 h-8 rounded-lg dark:bg-accent/10 bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">01</span>
+            <span class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base">Faz chaves codificadas de quais marcas?</span>
+          </div>
+          <div class="faq-icon shrink-0 w-8 h-8 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center transition-all duration-300">
+            <i data-lucide="chevron-down" class="w-4 h-4 dark:text-white/40 text-gray-400 transition-all duration-300 faq-chevron"></i>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 ml-12 dark:text-white/50 text-text-light-secondary text-sm leading-relaxed dark:border-surface-border/20 border-gray-100 border-t pt-4">
+            Trabalhamos com a maioria das marcas nacionais e importadas. Para confirmar se atendemos o seu veículo, entre em contato pelo WhatsApp.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="scroll-reveal faq-item dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-2xl overflow-hidden transition-all duration-300" style="transition-delay:80ms">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-6 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-2xl" aria-expanded="false">
+          <div class="flex items-center gap-4 pr-4">
+            <span class="shrink-0 w-8 h-8 rounded-lg dark:bg-accent/10 bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">02</span>
+            <span class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base">Quanto tempo demora o atendimento?</span>
+          </div>
+          <div class="faq-icon shrink-0 w-8 h-8 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center transition-all duration-300">
+            <i data-lucide="chevron-down" class="w-4 h-4 dark:text-white/40 text-gray-400 transition-all duration-300 faq-chevron"></i>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 ml-12 dark:text-white/50 text-text-light-secondary text-sm leading-relaxed dark:border-surface-border/20 border-gray-100 border-t pt-4">
+            Em média de 15 a 40 minutos, dependendo do serviço e da sua localização. Em emergências, priorizamos o atendimento mais rápido possível.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="scroll-reveal faq-item dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-2xl overflow-hidden transition-all duration-300" style="transition-delay:160ms">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-6 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-2xl" aria-expanded="false">
+          <div class="flex items-center gap-4 pr-4">
+            <span class="shrink-0 w-8 h-8 rounded-lg dark:bg-accent/10 bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">03</span>
+            <span class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base">Vocês atendem em domicílio?</span>
+          </div>
+          <div class="faq-icon shrink-0 w-8 h-8 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center transition-all duration-300">
+            <i data-lucide="chevron-down" class="w-4 h-4 dark:text-white/40 text-gray-400 transition-all duration-300 faq-chevron"></i>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 ml-12 dark:text-white/50 text-text-light-secondary text-sm leading-relaxed dark:border-surface-border/20 border-gray-100 border-t pt-4">
+            Sim! Atendemos no local 24 horas por dia, 7 dias por semana. Vamos até você em Vaz Lobo e bairros próximos.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="scroll-reveal faq-item dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-2xl overflow-hidden transition-all duration-300" style="transition-delay:240ms">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-6 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-2xl" aria-expanded="false">
+          <div class="flex items-center gap-4 pr-4">
+            <span class="shrink-0 w-8 h-8 rounded-lg dark:bg-accent/10 bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">04</span>
+            <span class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base">Qual a forma de pagamento?</span>
+          </div>
+          <div class="faq-icon shrink-0 w-8 h-8 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center transition-all duration-300">
+            <i data-lucide="chevron-down" class="w-4 h-4 dark:text-white/40 text-gray-400 transition-all duration-300 faq-chevron"></i>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 ml-12 dark:text-white/50 text-text-light-secondary text-sm leading-relaxed dark:border-surface-border/20 border-gray-100 border-t pt-4">
+            Aceitamos dinheiro, PIX, cartão de débito e crédito. Consulte condições especiais pelo WhatsApp.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="scroll-reveal faq-item dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-2xl overflow-hidden transition-all duration-300" style="transition-delay:320ms">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-6 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-2xl" aria-expanded="false">
+          <div class="flex items-center gap-4 pr-4">
+            <span class="shrink-0 w-8 h-8 rounded-lg dark:bg-accent/10 bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">05</span>
+            <span class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base">O serviço tem garantia?</span>
+          </div>
+          <div class="faq-icon shrink-0 w-8 h-8 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center transition-all duration-300">
+            <i data-lucide="chevron-down" class="w-4 h-4 dark:text-white/40 text-gray-400 transition-all duration-300 faq-chevron"></i>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 ml-12 dark:text-white/50 text-text-light-secondary text-sm leading-relaxed dark:border-surface-border/20 border-gray-100 border-t pt-4">
+            Sim, todos os nossos serviços possuem garantia. Consulte os termos de garantia específicos de cada serviço com o Felipe.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="scroll-reveal faq-item dark:bg-surface-card/50 bg-white dark:border-surface-border/30 border-gray-100 border rounded-2xl overflow-hidden transition-all duration-300" style="transition-delay:400ms">
+        <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-6 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-2xl" aria-expanded="false">
+          <div class="flex items-center gap-4 pr-4">
+            <span class="shrink-0 w-8 h-8 rounded-lg dark:bg-accent/10 bg-accent/10 flex items-center justify-center text-accent font-bold text-xs">06</span>
+            <span class="font-heading font-bold dark:text-white text-brand-black text-sm md:text-base">Abrem portas sem danificar a fechadura?</span>
+          </div>
+          <div class="faq-icon shrink-0 w-8 h-8 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center transition-all duration-300">
+            <i data-lucide="chevron-down" class="w-4 h-4 dark:text-white/40 text-gray-400 transition-all duration-300 faq-chevron"></i>
+          </div>
+        </button>
+        <div class="accordion-content">
+          <div class="px-5 md:px-6 pb-5 md:pb-6 ml-12 dark:text-white/50 text-text-light-secondary text-sm leading-relaxed dark:border-surface-border/20 border-gray-100 border-t pt-4">
+            Na maioria dos casos, sim. Utilizamos técnicas e ferramentas especializadas para abrir portas sem causar danos à fechadura ou à porta.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     CTA BANNER
+     ══════════════════════════════════════════════════════════════ -->
+<section class="relative overflow-hidden py-16 md:py-24 scroll-reveal" aria-label="Chamada para ação">
+  <div class="absolute inset-0 bg-accent"></div>
+  <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 2px 2px, rgba(0,0,0,0.15) 1px, transparent 0);background-size:24px 24px"></div>
+  <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 bg-black/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <div class="inline-flex items-center gap-2 bg-brand-black/10 text-brand-black text-xs font-bold px-4 py-2 rounded-full mb-6">
+      <i data-lucide="zap" class="w-3.5 h-3.5"></i> ATENDIMENTO EMERGENCIAL
+    </div>
+    <h2 class="font-heading font-black text-brand-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 tracking-tight leading-[0.95]">
+      Trancou a porta?<br />Perdeu a chave?
+    </h2>
+    <p class="text-brand-black/60 text-lg md:text-xl mb-10 max-w-lg mx-auto font-medium">
+      Chegamos rápido! Felipe resolve no local com equipamentos profissionais.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <button onclick="openContactModal()" class="cta-modal inline-flex items-center justify-center gap-2.5 font-bold rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98] bg-brand-black hover:bg-brand-black/90 text-white shadow-xl shadow-black/20 text-base px-8 py-4 group">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        Chamar no WhatsApp
+        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+      </button>
+      <button onclick="openContactModal()" class="cta-modal inline-flex items-center justify-center gap-2.5 font-bold rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98] bg-white hover:bg-white/90 text-brand-black shadow-xl shadow-black/10 text-base px-8 py-4">
+        <i data-lucide="phone" class="w-5 h-5"></i>
+        Fale Conosco
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     CONTACT
+     ══════════════════════════════════════════════════════════════ -->
+<section id="contato" class="dark:bg-surface-dark bg-surface-light light-texture py-16 md:py-24 section-transition" aria-label="Contato e localização">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-14 scroll-reveal">
+      <span class="inline-flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-[0.2em] mb-3">
+        <span class="w-8 h-px bg-accent"></span> Contato <span class="w-8 h-px bg-accent"></span>
+      </span>
+      <h2 class="font-heading font-black dark:text-white text-brand-black text-3xl md:text-4xl lg:text-5xl tracking-tight">
+        Fale com o <span class="text-gradient">FILIPÃO</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <!-- Info + Map -->
+      <div class="space-y-6 scroll-reveal-left">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button onclick="openContactModal()" class="cta-modal flex items-center gap-4 dark:bg-green-whatsapp/10 bg-green-50 dark:border-green-whatsapp/20 border-green-200 border rounded-xl p-4 transition-all group dark:hover:bg-green-whatsapp/15 hover:bg-green-100 micro-hover text-left w-full">
+            <div class="w-12 h-12 bg-green-whatsapp rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-green-whatsapp/20">
+              <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <p class="font-bold dark:text-white text-brand-black text-sm">WhatsApp</p>
+              <p class="text-green-whatsapp text-xs font-semibold">(21) 98892-4039</p>
+            </div>
+          </button>
+
+          <button onclick="openContactModal()" class="cta-modal flex items-center gap-4 dark:bg-accent/5 bg-amber-50 dark:border-accent/15 border-amber-200 border rounded-xl p-4 transition-all group dark:hover:bg-accent/10 hover:bg-amber-100 micro-hover text-left w-full">
+            <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-accent/20">
+              <i data-lucide="phone" class="w-5 h-5 text-brand-black"></i>
+            </div>
+            <div>
+              <p class="font-bold dark:text-white text-brand-black text-sm">Celular</p>
+              <p class="text-accent text-xs font-semibold">(21) 98892-4039</p>
+            </div>
+          </button>
+
+          <a href="tel:+552121221249" class="flex items-center gap-4 dark:bg-white/5 bg-gray-50 dark:border-surface-border/30 border-gray-200 border rounded-xl p-4 transition-all dark:hover:bg-white/[0.08] hover:bg-gray-100 micro-hover">
+            <div class="w-12 h-12 dark:bg-surface-border bg-gray-300 rounded-xl flex items-center justify-center shrink-0">
+              <i data-lucide="phone" class="w-5 h-5 dark:text-white text-gray-700"></i>
+            </div>
+            <div>
+              <p class="font-bold dark:text-white text-brand-black text-sm">Telefone Fixo</p>
+              <p class="dark:text-white/50 text-text-light-muted text-xs font-semibold">(21) 2122-1249</p>
+            </div>
+          </a>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Monsenhor+F%C3%A9lix,+64+-+Vaz+Lobo,+Rio+de+Janeiro+-+RJ" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 dark:bg-blue-500/10 bg-blue-50 dark:border-blue-500/20 border-blue-200 border rounded-xl p-4 transition-all dark:hover:bg-blue-500/15 hover:bg-blue-100 micro-hover">
+            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-blue-600/20">
+              <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+            </div>
+            <div>
+              <p class="font-bold dark:text-white text-brand-black text-sm">Endereço</p>
+              <p class="dark:text-blue-400 text-blue-600 text-xs font-semibold">Av. Monsenhor Félix, 64</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Map -->
+        <div class="rounded-2xl overflow-hidden shadow-xl dark:shadow-black/30 shadow-gray-200/50 dark:border-surface-border/30 border-gray-200 border h-64 sm:h-80">
+          <iframe title="Localização Filipão Chaveiro" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2!2d-43.2827!3d-22.8569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDUxJzI0LjgiUyA0M8KwMTYnNTcuNyJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Monsenhor+F%C3%A9lix,+64+-+Vaz+Lobo,+Rio+de+Janeiro+-+RJ" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all w-full justify-center shadow-lg shadow-blue-600/20 hover:scale-[1.01]">
+          <i data-lucide="navigation" class="w-4 h-4"></i> Como chegar
+        </a>
+      </div>
+
+      <!-- Contact card -->
+      <div class="scroll-reveal-right">
+        <div class="dark:bg-surface-card/50 bg-white rounded-2xl p-6 md:p-8 dark:border-surface-border/30 border-gray-100 border shadow-xl dark:shadow-black/20 shadow-gray-200/50">
+          <h3 class="font-heading font-black dark:text-white text-brand-black text-xl mb-1">Solicitar Orçamento Rápido</h3>
+          <p class="dark:text-white/30 text-text-light-muted text-sm mb-7">Sem spam — resposta via WhatsApp em minutos.</p>
+
+          <div class="space-y-4 mb-6">
+            <div class="flex items-center gap-4 dark:bg-surface-elevated/50 bg-surface-light rounded-xl p-4 dark:border-surface-border/30 border-gray-200 border">
+              <div class="w-10 h-10 bg-green-whatsapp/10 rounded-lg flex items-center justify-center shrink-0">
+                <i data-lucide="message-circle" class="w-5 h-5 text-green-whatsapp"></i>
+              </div>
+              <div>
+                <p class="font-bold dark:text-white text-brand-black text-sm">Resposta rápida</p>
+                <p class="dark:text-white/40 text-text-light-muted text-xs">Receba retorno em até 15 minutos</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 dark:bg-surface-elevated/50 bg-surface-light rounded-xl p-4 dark:border-surface-border/30 border-gray-200 border">
+              <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
+                <i data-lucide="shield" class="w-5 h-5 text-accent"></i>
+              </div>
+              <div>
+                <p class="font-bold dark:text-white text-brand-black text-sm">Orçamento sem compromisso</p>
+                <p class="dark:text-white/40 text-text-light-muted text-xs">Preço justo e transparente</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 dark:bg-surface-elevated/50 bg-surface-light rounded-xl p-4 dark:border-surface-border/30 border-gray-200 border">
+              <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5 text-blue-500"></i>
+              </div>
+              <div>
+                <p class="font-bold dark:text-white text-brand-black text-sm">Atendimento no local</p>
+                <p class="dark:text-white/40 text-text-light-muted text-xs">Vaz Lobo e toda a região</p>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="openContactModal()" class="cta-modal w-full inline-flex items-center justify-center gap-2.5 bg-accent hover:bg-accent-hover text-brand-black font-black text-base py-4 rounded-xl shadow-lg shadow-accent/25 transition-all hover:scale-[1.01] active:scale-[0.99]">
+            <i data-lucide="send" class="w-5 h-5"></i> Solicitar Orçamento
+          </button>
+          <p class="text-center dark:text-white/20 text-text-light-muted text-xs mt-3">
+            Serviço com garantia — Felipe atende pessoalmente
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════════════ -->
+<footer class="dark:bg-brand-black bg-brand-black text-white" role="contentinfo">
+  <div class="h-1 bg-gradient-to-r from-accent via-accent-hover to-accent"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 md:py-18">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div class="sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-11 h-11 rounded-xl overflow-hidden border-2 border-accent/20 shadow-lg shadow-accent/10">
+            <img src="https://raw.githubusercontent.com/creativethb/chaveirovl/main/img/logo1.jpg" alt="Filipão Chaveiro" class="logo-img w-full h-full object-cover" loading="lazy" width="44" height="44" />
+          </div>
+          <div>
+            <span class="font-heading font-black text-white text-lg block leading-tight">FILIPÃO <span class="text-accent">CHAVEIRO</span></span>
+            <span class="text-white/30 text-[10px] tracking-widest uppercase">Vaz Lobo — RJ</span>
+          </div>
+        </div>
+        <p class="text-white/40 text-sm leading-relaxed">Soluções em chaveiro residencial e automotivo. Atendimento 24 horas em Vaz Lobo e região.</p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-heading font-bold text-accent text-sm mb-5 uppercase tracking-wider">Navegação</h4>
+        <nav class="space-y-3">
+          <a href="#servicos" class="block text-white/40 hover:text-accent text-sm transition-colors hover:translate-x-1 transform duration-200">Serviços</a>
+          <a href="#diferenciais" class="block text-white/40 hover:text-accent text-sm transition-colors hover:translate-x-1 transform duration-200">Diferenciais</a>
+          <a href="#sobre" class="block text-white/40 hover:text-accent text-sm transition-colors hover:translate-x-1 transform duration-200">Sobre</a>
+          <a href="#faq" class="block text-white/40 hover:text-accent text-sm transition-colors hover:translate-x-1 transform duration-200">FAQ</a>
+          <a href="#contato" class="block text-white/40 hover:text-accent text-sm transition-colors hover:translate-x-1 transform duration-200">Contato</a>
+        </nav>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="font-heading font-bold text-accent text-sm mb-5 uppercase tracking-wider">Serviços</h4>
+        <ul class="space-y-3 text-white/40 text-sm">
+          <li>Chaves codificadas</li>
+          <li>Abertura de veículos</li>
+          <li>Abertura residencial</li>
+          <li>Troca de segredo</li>
+          <li>Manutenção de fechaduras</li>
+          <li>Emergencial 24h</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-heading font-bold text-accent text-sm mb-5 uppercase tracking-wider">Contato</h4>
+        <div class="space-y-3 text-sm">
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Monsenhor+F%C3%A9lix,+64+-+Vaz+Lobo,+Rio+de+Janeiro+-+RJ" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2.5 text-white/40 hover:text-accent transition-colors">
+            <i data-lucide="map-pin" class="w-4 h-4 shrink-0 mt-0.5 text-accent/50"></i>
+            Av. Monsenhor Félix, 64 — Vaz Lobo, Rio de Janeiro — RJ
+          </a>
+          <a href="tel:+552121221249" class="flex items-center gap-2.5 text-white/40 hover:text-accent transition-colors">
+            <i data-lucide="phone" class="w-4 h-4 shrink-0 text-accent/50"></i> (21) 2122-1249
+          </a>
+          <a href="tel:+5521988924039" class="flex items-center gap-2.5 text-white/40 hover:text-accent transition-colors">
+            <i data-lucide="phone" class="w-4 h-4 shrink-0 text-accent/50"></i> (21) 98892-4039
+          </a>
+          <a href="https://wa.me/5521988924039" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-white/40 hover:text-accent transition-colors">
+            <i data-lucide="message-circle" class="w-4 h-4 shrink-0 text-accent/50"></i> WhatsApp
+          </a>
+          <div class="flex items-center gap-2.5 text-accent font-bold pt-2">
+            <i data-lucide="clock" class="w-4 h-4 shrink-0"></i> Atendimento 24 horas
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-white/20 text-xs text-center sm:text-left">© 2025 FILIPÃO CHAVEIRO — Todos os direitos reservados.</p>
+      <p class="text-white/20 text-xs">Av. Monsenhor Félix, 64 — Vaz Lobo, Rio de Janeiro — RJ</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     FLOATING BUTTONS
+     ══════════════════════════════════════════════════════════════ -->
+<!-- Mobile bottom bar -->
+<div id="floating-mobile" class="fixed bottom-0 left-0 right-0 z-50 md:hidden translate-y-full opacity-0 transition-all duration-500">
+  <div class="flex bg-brand-black/95 backdrop-blur-xl border-t border-white/5 safe-area-pb">
+    <button onclick="openContactModal()" class="cta-modal flex-1 flex items-center justify-center gap-2 py-4 bg-accent text-brand-black font-bold text-sm active:bg-accent-hover transition-colors" aria-label="Fale Conosco">
+      <i data-lucide="message-circle" class="w-4 h-4"></i> Fale Conosco
+    </button>
+  </div>
+</div>
+
+<!-- Desktop floating button -->
+<div id="floating-desktop" class="hidden md:flex fixed bottom-8 right-8 flex-col gap-3 z-50 translate-y-8 opacity-0 transition-all duration-500">
+  <button onclick="openContactModal()" class="cta-modal w-14 h-14 bg-accent hover:bg-accent-hover text-brand-black rounded-2xl shadow-xl shadow-accent/30 flex items-center justify-center transition-all hover:scale-110 hover:shadow-accent/50 animate-pulse-glow" aria-label="Fale Conosco" title="Fale Conosco">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+  </button>
+</div>
+
+<!-- Mobile bottom bar spacer -->
+<div class="h-16 md:h-0"></div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     CONTACT MODAL
+     ══════════════════════════════════════════════════════════════ -->
+<div id="contact-modal" class="fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-label="Como você prefere falar com a gente?">
+  <!-- Overlay -->
+  <div id="modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeContactModal()"></div>
+
+  <!-- Modal content -->
+  <div class="absolute inset-0 flex items-end md:items-center justify-center pointer-events-none">
+    <div id="modal-box" class="pointer-events-auto relative w-full max-w-md md:max-w-lg md:mx-4 dark:bg-surface-card bg-white rounded-t-3xl md:rounded-3xl shadow-2xl dark:border-surface-border/30 border-gray-200 border overflow-hidden">
+      <!-- Handle bar (mobile) -->
+      <div class="md:hidden flex justify-center pt-3 pb-1">
+        <div class="w-10 h-1 bg-gray-300 dark:bg-white/20 rounded-full"></div>
+      </div>
+
+      <!-- Close button -->
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 w-10 h-10 rounded-xl dark:bg-white/5 bg-gray-100 dark:hover:bg-white/10 hover:bg-gray-200 flex items-center justify-center transition-all z-10" aria-label="Fechar modal">
+        <i data-lucide="x" class="w-5 h-5 dark:text-white/60 text-gray-500"></i>
+      </button>
+
+      <div class="p-6 md:p-8">
+        <!-- STATE: CHOICE -->
+        <div id="modal-choice">
+          <div class="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-5">
+            <i data-lucide="message-circle" class="w-7 h-7 text-accent"></i>
+          </div>
+          <h3 class="font-heading font-black dark:text-white text-text-light-primary text-xl md:text-2xl mb-2">Como você prefere falar com a gente?</h3>
+          <p class="dark:text-white/40 text-text-light-muted text-sm mb-8">Escolha a melhor forma de contato. Estamos prontos para atender!</p>
+
+          <div class="space-y-3">
+            <button onclick="handleCallChoice()" class="w-full flex items-center gap-4 p-4 rounded-2xl dark:bg-surface-elevated/50 bg-surface-light dark:border-surface-border/50 border-gray-200 border dark:hover:border-accent/30 hover:border-accent/50 transition-all group micro-hover">
+              <div class="w-12 h-12 bg-accent rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-accent/20 group-hover:scale-105 transition-transform">
+                <i data-lucide="phone" class="w-5 h-5 text-brand-black"></i>
+              </div>
+              <div class="text-left flex-1">
+                <p class="font-bold dark:text-white text-text-light-primary text-base">Ligar agora</p>
+                <p class="dark:text-white/40 text-text-light-muted text-xs">Você será redirecionado para a chamada</p>
+              </div>
+              <i data-lucide="arrow-right" class="w-5 h-5 dark:text-white/20 text-gray-300 group-hover:text-accent transition-colors"></i>
+            </button>
+
+            <button onclick="handleWhatsAppChoice()" class="w-full flex items-center gap-4 p-4 rounded-2xl dark:bg-surface-elevated/50 bg-surface-light dark:border-surface-border/50 border-gray-200 border dark:hover:border-green-whatsapp/30 hover:border-green-whatsapp/50 transition-all group micro-hover">
+              <div class="w-12 h-12 bg-green-whatsapp rounded-xl flex items-center justify-center shrink-0 shadow-md shadow-green-whatsapp/20 group-hover:scale-105 transition-transform">
+                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+              </div>
+              <div class="text-left flex-1">
+                <p class="font-bold dark:text-white text-text-light-primary text-base">Falar no WhatsApp</p>
+                <p class="dark:text-white/40 text-text-light-muted text-xs">Preencha rápido e envie sua mensagem</p>
+              </div>
+              <i data-lucide="arrow-right" class="w-5 h-5 dark:text-white/20 text-gray-300 group-hover:text-green-whatsapp transition-colors"></i>
+            </button>
+          </div>
+
+          <p class="text-center dark:text-white/20 text-text-light-muted text-xs mt-6 flex items-center justify-center gap-1.5">
+            <i data-lucide="zap" class="w-3 h-3 text-accent"></i> Resposta rápida em até 15 minutos
+          </p>
+        </div>
+
+        <!-- STATE: FORM -->
+        <div id="modal-form" class="hidden">
+          <button onclick="showModalState('choice')" class="flex items-center gap-1 text-accent text-xs font-bold mb-4 hover:underline">
+            <i data-lucide="arrow-right" class="w-3 h-3 rotate-180"></i> Voltar
+          </button>
+
+          <div class="w-12 h-12 bg-green-whatsapp/10 rounded-2xl flex items-center justify-center mb-4">
+            <i data-lucide="send" class="w-6 h-6 text-green-whatsapp"></i>
+          </div>
+          <h3 class="font-heading font-black dark:text-white text-text-light-primary text-xl mb-1">Fale rápido — estamos pertinho</h3>
+          <p class="dark:text-white/40 text-text-light-muted text-sm mb-6">Preencha os dados e envie direto pelo WhatsApp.</p>
+
+          <form id="whatsapp-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <div>
+              <label for="form-nome" class="block text-xs font-bold dark:text-white/60 text-text-light-secondary mb-1.5">Nome <span class="text-red-400">*</span></label>
+              <input id="form-nome" type="text" required aria-required="true" placeholder="Seu nome" class="w-full px-4 py-3.5 rounded-xl dark:bg-surface-elevated/80 bg-surface-light dark:border-surface-border/50 border-gray-200 border text-sm dark:text-white text-text-light-primary placeholder:dark:text-white/25 placeholder:text-text-light-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all" />
+            </div>
+            <div>
+              <label for="form-telefone" class="block text-xs font-bold dark:text-white/60 text-text-light-secondary mb-1.5">Telefone <span class="text-red-400">*</span></label>
+              <input id="form-telefone" type="tel" required aria-required="true" placeholder="(21) 99999-9999" class="w-full px-4 py-3.5 rounded-xl dark:bg-surface-elevated/80 bg-surface-light dark:border-surface-border/50 border-gray-200 border text-sm dark:text-white text-text-light-primary placeholder:dark:text-white/25 placeholder:text-text-light-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all" />
+              <p id="phone-error" class="text-red-400 text-xs mt-1 hidden flex items-center gap-1">
+                <i data-lucide="alert-triangle" class="w-3 h-3"></i> Informe um telefone válido com DDD
+              </p>
+            </div>
+            <div>
+              <label for="form-servico" class="block text-xs font-bold dark:text-white/60 text-text-light-secondary mb-1.5">Serviço</label>
+              <select id="form-servico" class="w-full px-4 py-3.5 rounded-xl dark:bg-surface-elevated/80 bg-surface-light dark:border-surface-border/50 border-gray-200 border text-sm dark:text-white text-text-light-primary focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all">
+                <option value="">Selecione o serviço</option>
+                <option value="Chaves codificadas">Chaves codificadas</option>
+                <option value="Abertura de veículo">Abertura de veículo</option>
+                <option value="Abertura de porta residencial">Abertura de porta residencial</option>
+                <option value="Troca de segredo">Troca de segredo</option>
+                <option value="Conserto de ignição">Conserto de ignição</option>
+                <option value="Emergencial">Atendimento emergencial</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+            <div>
+              <label for="form-mensagem" class="block text-xs font-bold dark:text-white/60 text-text-light-secondary mb-1.5">Mensagem <span class="dark:text-white/20 text-text-light-muted">(opcional)</span></label>
+              <textarea id="form-mensagem" rows="2" placeholder="Ex.: Preciso de chave codificada para Honda Civic — urgente" class="w-full px-4 py-3.5 rounded-xl dark:bg-surface-elevated/80 bg-surface-light dark:border-surface-border/50 border-gray-200 border text-sm dark:text-white text-text-light-primary placeholder:dark:text-white/25 placeholder:text-text-light-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all resize-none"></textarea>
+            </div>
+            <button type="submit" id="form-submit-btn" class="w-full flex items-center justify-center gap-2.5 bg-green-whatsapp hover:bg-green-whatsapp-hover disabled:opacity-70 text-white font-black text-base py-4 rounded-xl shadow-lg shadow-green-whatsapp/25 transition-all hover:scale-[1.01] active:scale-[0.99]">
+              <i data-lucide="message-circle" class="w-5 h-5" id="submit-icon"></i>
+              <span id="submit-text">Enviar pelo WhatsApp</span>
+            </button>
+          </form>
+          <p class="text-center dark:text-white/20 text-text-light-muted text-xs mt-4">Sem spam — resposta via WhatsApp em minutos</p>
+        </div>
+
+        <!-- STATE: CONFIRMATION -->
+        <div id="modal-confirm" class="hidden">
+          <div class="text-center py-6">
+            <div class="w-20 h-20 bg-green-whatsapp/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i data-lucide="check-circle" class="w-10 h-10 text-green-whatsapp"></i>
+            </div>
+            <h3 class="font-heading font-black dark:text-white text-text-light-primary text-xl mb-2">Pronto!</h3>
+            <p class="dark:text-white/50 text-text-light-secondary text-base mb-2">Abrindo o WhatsApp com sua mensagem…</p>
+            <p class="dark:text-white/30 text-text-light-muted text-sm mb-8">O Felipe vai responder rapidinho 🚀</p>
+            <button onclick="closeContactModal()" class="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-brand-black font-bold text-sm px-8 py-3.5 rounded-xl transition-all">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SCRIPTS
+     ══════════════════════════════════════════════════════════════ -->
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<script>
+(function() {
+  'use strict';
+
+  /* ── Constants ── */
+  var WA_NUMBER = '5521988924039';
+  var PHONE_URL = 'tel:+5521988924039';
+  var lastSentTime = 0;
+  var triggerElement = null;
+
+  /* ── Analytics ── */
+  window.trackEvent = function(event, data) {
+    try {
+      window.dataLayer.push(Object.assign({ event: event }, data || {}));
+    } catch(e) {}
+  };
+
+  /* ── Initialize Lucide Icons ── */
+  lucide.createIcons();
+
+  /* ══════════════════════════════════════════
+     THEME TOGGLE
+     ══════════════════════════════════════════ */
+  function initTheme() {
+    var saved = localStorage.getItem('filipao-theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var isDark = saved ? saved === 'dark' : prefersDark;
+    applyTheme(isDark);
+  }
+
+  function applyTheme(isDark) {
+    var root = document.documentElement;
+    if (isDark) {
+      root.classList.add('dark');
+      root.classList.remove('light');
+      document.getElementById('meta-theme').setAttribute('content', '#0A0A0A');
+    } else {
+      root.classList.remove('dark');
+      root.classList.add('light');
+      document.getElementById('meta-theme').setAttribute('content', '#f7f7f7');
+    }
+    localStorage.setItem('filipao-theme', isDark ? 'dark' : 'light');
+  }
+
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    var isDark = document.documentElement.classList.contains('dark');
+    applyTheme(!isDark);
+  });
+
+  initTheme();
+
+  /* ══════════════════════════════════════════
+     HEADER SCROLL
+     ══════════════════════════════════════════ */
+  var header = document.getElementById('header');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 20) {
+      header.classList.add('shadow-2xl', 'shadow-black/20', 'dark:bg-brand-black/95', 'bg-white/95', 'backdrop-blur-xl');
+    } else {
+      header.classList.remove('shadow-2xl', 'shadow-black/20', 'dark:bg-brand-black/95', 'bg-white/95', 'backdrop-blur-xl');
+    }
+  }, { passive: true });
+
+  /* ══════════════════════════════════════════
+     MOBILE MENU
+     ══════════════════════════════════════════ */
+  var menuOpen = false;
+  var menuToggle = document.getElementById('menu-toggle');
+  var mobileNav = document.getElementById('mobile-nav');
+  var menuIconOpen = document.getElementById('menu-icon-open');
+  var menuIconClose = document.getElementById('menu-icon-close');
+
+  menuToggle.addEventListener('click', function() {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      mobileNav.classList.remove('max-h-0', 'opacity-0');
+      mobileNav.classList.add('max-h-96', 'opacity-100');
+      menuIconOpen.classList.add('hidden');
+      menuIconClose.classList.remove('hidden');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    } else {
+      mobileNav.classList.add('max-h-0', 'opacity-0');
+      mobileNav.classList.remove('max-h-96', 'opacity-100');
+      menuIconOpen.classList.remove('hidden');
+      menuIconClose.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close menu on link click
+  document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      menuOpen = false;
+      mobileNav.classList.add('max-h-0', 'opacity-0');
+      mobileNav.classList.remove('max-h-96', 'opacity-100');
+      menuIconOpen.classList.remove('hidden');
+      menuIconClose.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ══════════════════════════════════════════
+     CONTACT MODAL
+     ══════════════════════════════════════════ */
+  var modal = document.getElementById('contact-modal');
+  var modalBox = document.getElementById('modal-box');
+  var choiceState = document.getElementById('modal-choice');
+  var formState = document.getElementById('modal-form');
+  var confirmState = document.getElementById('modal-confirm');
+
+  // Prefill from localStorage
+  var savedName = localStorage.getItem('filipao-name') || '';
+  var savedPhone = localStorage.getItem('filipao-phone') || '';
+  document.getElementById('form-nome').value = savedName;
+  document.getElementById('form-telefone').value = savedPhone;
+
+  window.openContactModal = function() {
+    trackEvent('contact_modal_open');
+    triggerElement = document.activeElement;
+    showModalState('choice');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex', 'animate-overlay-in');
+    document.body.classList.add('modal-open');
+
+    // Animate modal box
+    if (window.innerWidth < 768) {
+      modalBox.classList.add('animate-sheet-in');
+      modalBox.classList.remove('animate-modal-in');
+    } else {
+      modalBox.classList.add('animate-modal-in');
+      modalBox.classList.remove('animate-sheet-in');
+    }
+
+    // Re-render icons in modal
+    setTimeout(function() { lucide.createIcons(); }, 50);
+
+    // Focus first focusable
+    setTimeout(function() {
+      var firstBtn = modalBox.querySelector('button');
+      if (firstBtn) firstBtn.focus();
+    }, 100);
+  };
+
+  window.closeContactModal = function() {
+    document.body.classList.remove('modal-open');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex', 'animate-overlay-in');
+    if (triggerElement) {
+      triggerElement.focus();
+      triggerElement = null;
+    }
+  };
+
+  window.showModalState = function(state) {
+    choiceState.classList.add('hidden');
+    formState.classList.add('hidden');
+    confirmState.classList.add('hidden');
+    if (state === 'choice') choiceState.classList.remove('hidden');
+    if (state === 'form') formState.classList.remove('hidden');
+    if (state === 'confirm') confirmState.classList.remove('hidden');
+    setTimeout(function() { lucide.createIcons(); }, 50);
+  };
+
+  window.handleCallChoice = function() {
+    trackEvent('contact_call_initiated');
+    window.location.href = PHONE_URL;
+    setTimeout(closeContactModal, 500);
+  };
+
+  window.handleWhatsAppChoice = function() {
+    trackEvent('contact_option_select', { option: 'whatsapp' });
+    showModalState('form');
+  };
+
+  window.handleFormSubmit = function(e) {
+    e.preventDefault();
+
+    var nome = document.getElementById('form-nome').value.trim();
+    var telefone = document.getElementById('form-telefone').value.trim();
+    var servico = document.getElementById('form-servico').value;
+    var mensagem = document.getElementById('form-mensagem').value.trim();
+    var phoneError = document.getElementById('phone-error');
+    var submitBtn = document.getElementById('form-submit-btn');
+    var submitText = document.getElementById('submit-text');
+    var submitIcon = document.getElementById('submit-icon');
+
+    // Validate phone
+    var cleanPhone = telefone.replace(/\D/g, '');
+    if (cleanPhone.length < 10 || cleanPhone.length > 11) {
+      phoneError.classList.remove('hidden');
+      return;
+    }
+    phoneError.classList.add('hidden');
+
+    // Rate limit
+    var now = Date.now();
+    if (now - lastSentTime < 5000) return;
+    lastSentTime = now;
+
+    // Persist
+    localStorage.setItem('filipao-name', nome);
+    localStorage.setItem('filipao-phone', telefone);
+
+    // Show sending state
+    submitBtn.disabled = true;
+    submitText.textContent = 'Enviando…';
+    submitIcon.setAttribute('data-lucide', 'loader');
+    submitIcon.classList.add('animate-spinner');
+    lucide.createIcons();
+
+    // Build message
+    var parts = [
+      'Olá! Meu nome é *' + nome + '*.',
+      '📞 Telefone: ' + telefone
+    ];
+    if (servico) parts.push('🔧 Serviço: ' + servico);
+    if (mensagem) parts.push('💬 ' + mensagem);
+    parts.push('\n_Enviado pelo site Filipão Chaveiro_');
+
+    var waUrl = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(parts.join('\n'));
+
+    trackEvent('contact_whatsapp_submit', { servico: servico });
+
+    setTimeout(function() {
+      submitBtn.disabled = false;
+      submitText.textContent = 'Enviar pelo WhatsApp';
+      submitIcon.setAttribute('data-lucide', 'message-circle');
+      submitIcon.classList.remove('animate-spinner');
+      lucide.createIcons();
+
+      showModalState('confirm');
+      window.open(waUrl, '_blank');
+    }, 1200);
+  };
+
+  // ESC to close modal & focus trap
+  document.addEventListener('keydown', function(e) {
+    if (!modal.classList.contains('hidden')) {
+      if (e.key === 'Escape') {
+        closeContactModal();
+        return;
+      }
+      if (e.key === 'Tab') {
+        var focusable = modalBox.querySelectorAll('button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusable.length === 0) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
+  });
+
+  // Hide phone error on input
+  document.getElementById('form-telefone').addEventListener('input', function() {
+    document.getElementById('phone-error').classList.add('hidden');
+  });
+
+  /* ══════════════════════════════════════════
+     FAQ ACCORDION
+     ══════════════════════════════════════════ */
+  window.toggleFaq = function(btn) {
+    var item = btn.closest('.faq-item');
+    var content = item.querySelector('.accordion-content');
+    var chevron = item.querySelector('.faq-chevron');
+    var iconBox = item.querySelector('.faq-icon');
+    var isOpen = content.classList.contains('open');
+
+    if (isOpen) {
+      content.classList.remove('open');
+      chevron.style.transform = '';
+      iconBox.classList.remove('!bg-accent');
+      chevron.classList.remove('!text-brand-black');
+      item.classList.remove('dark:border-accent/20', 'border-accent/30', 'dark:shadow-lg', 'shadow-md');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      content.classList.add('open');
+      chevron.style.transform = 'rotate(180deg)';
+      iconBox.classList.add('!bg-accent');
+      chevron.classList.add('!text-brand-black');
+      item.classList.add('dark:border-accent/20', 'border-accent/30', 'dark:shadow-lg', 'shadow-md');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  };
+
+  /* ══════════════════════════════════════════
+     DIFFERENTIALS ACCORDION
+     ══════════════════════════════════════════ */
+  window.toggleDiff = function(btn) {
+    var item = btn.closest('.diff-item');
+    var content = item.querySelector('.accordion-content');
+    var chevron = item.querySelector('.diff-chevron');
+    var iconBox = item.querySelector('.diff-icon');
+    var isOpen = content.classList.contains('open');
+    var label = item.querySelector('h3') ? item.querySelector('h3').textContent : '';
+
+    trackEvent('trust_item_click', { item: label });
+
+    if (isOpen) {
+      content.classList.remove('open');
+      chevron.style.transform = '';
+      iconBox.classList.remove('!bg-accent', 'shadow-lg', 'shadow-accent/20');
+      item.classList.remove('dark:border-accent/30', 'border-accent/30', 'dark:shadow-xl', 'shadow-lg');
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      content.classList.add('open');
+      chevron.style.transform = 'rotate(180deg)';
+      iconBox.classList.add('!bg-accent', 'shadow-lg', 'shadow-accent/20');
+      item.classList.add('dark:border-accent/30', 'border-accent/30', 'dark:shadow-xl', 'shadow-lg');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    setTimeout(function() { lucide.createIcons(); }, 50);
+  };
+
+  /* ══════════════════════════════════════════
+     SCROLL ANIMATIONS
+     ══════════════════════════════════════════ */
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        // Apply delay from style attribute if exists
+        var delay = entry.target.style.transitionDelay || '0ms';
+        entry.target.style.transitionDelay = delay;
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  /* ══════════════════════════════════════════
+     FLOATING BUTTONS VISIBILITY
+     ══════════════════════════════════════════ */
+  var floatingMobile = document.getElementById('floating-mobile');
+  var floatingDesktop = document.getElementById('floating-desktop');
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      floatingMobile.classList.remove('translate-y-full', 'opacity-0');
+      floatingMobile.classList.add('translate-y-0', 'opacity-100');
+      floatingDesktop.classList.remove('translate-y-8', 'opacity-0');
+      floatingDesktop.classList.add('translate-y-0', 'opacity-100');
+    } else {
+      floatingMobile.classList.add('translate-y-full', 'opacity-0');
+      floatingMobile.classList.remove('translate-y-0', 'opacity-100');
+      floatingDesktop.classList.add('translate-y-8', 'opacity-0');
+      floatingDesktop.classList.remove('translate-y-0', 'opacity-100');
+    }
+  }, { passive: true });
+
+})();
+</script>
+
+</body>
+</html>
