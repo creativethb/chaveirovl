@@ -35,10 +35,7 @@
   <meta name="twitter:description" content="Chaves codificadas, abertura de portas e veículos. Atendimento 24h em Vaz Lobo." />
   <meta name="twitter:image" content="https://raw.githubusercontent.com/creativethb/chaveirovl/main/img/logo1.jpg" />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- System Font Stack (zero external dependency) -->
 
   <!-- Anti-FOUC: apply theme BEFORE render -->
   <script>
@@ -61,8 +58,8 @@
       theme: {
         extend: {
           fontFamily: {
-            heading: ['Montserrat', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
+            heading: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            body: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
           },
           colors: {
             accent: { DEFAULT: '#FFD400', hover: '#FFC107', dim: '#B8960A' },
@@ -93,10 +90,10 @@
   <style>
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{font-family:'Inter',sans-serif;margin:0;padding:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;padding:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
     html.dark body{background:#0A0A0A;color:#fff;transition:background-color .3s,color .3s}
     html.light body{background:#f5f5f0;color:#1a1a1a;transition:background-color .3s,color .3s}
-    h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif}
+    h1,h2,h3,h4,h5,h6{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;letter-spacing:-0.02em}
 
     /* Scrollbar */
     ::-webkit-scrollbar{width:6px}
@@ -196,7 +193,7 @@
     .online-dot{width:8px;height:8px;background:#25D366;border-radius:50%;display:inline-block;animation:dot-pulse 1.5s ease-in-out infinite}
 
     /* Service number */
-    .service-num{position:absolute;top:-8px;left:-8px;width:36px;height:36px;background:#FFD400;color:#0A0A0A;font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;border-radius:12px;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 4px 12px rgba(255,212,0,.3)}
+    .service-num{position:absolute;top:-8px;left:-8px;width:36px;height:36px;background:#FFD400;color:#0A0A0A;font-weight:900;font-size:14px;border-radius:12px;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 4px 12px rgba(255,212,0,.3)}
 
     /* Back to top */
     #back-to-top{transition:all .3s ease;transform:translateY(20px);opacity:0}
@@ -280,7 +277,7 @@
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
-      "reviewCount": "127"
+      "reviewCount": "1200"
     }
   }
   </script>
@@ -302,13 +299,13 @@
     <span class="inline-flex items-center gap-1.5">🔑 Chaves codificadas na hora</span>
     <span class="inline-flex items-center gap-1.5">🚗 Abertura de veículos sem danos</span>
     <span class="inline-flex items-center gap-1.5">📞 (21) 98892-4039</span>
-    <span class="inline-flex items-center gap-1.5">🏆 +127 clientes atendidos</span>
+    <span class="inline-flex items-center gap-1.5">🏆 +1.200 clientes atendidos</span>
     <span class="inline-flex items-center gap-1.5">✅ Serviço com garantia</span>
     <span class="inline-flex items-center gap-1.5">⚡ Atendimento 24 horas — Vaz Lobo e região</span>
     <span class="inline-flex items-center gap-1.5">🔑 Chaves codificadas na hora</span>
     <span class="inline-flex items-center gap-1.5">🚗 Abertura de veículos sem danos</span>
     <span class="inline-flex items-center gap-1.5">📞 (21) 98892-4039</span>
-    <span class="inline-flex items-center gap-1.5">🏆 +127 clientes atendidos</span>
+    <span class="inline-flex items-center gap-1.5">🏆 +1.200 clientes atendidos</span>
     <span class="inline-flex items-center gap-1.5">✅ Serviço com garantia</span>
   </div>
 </div>
@@ -493,7 +490,7 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 divide-x dark:divide-surface-border/20 divide-gray-200">
       <div class="py-7 md:py-10 text-center scroll-reveal" style="transition-delay:0ms">
-        <p class="font-heading font-black text-accent text-2xl sm:text-3xl md:text-4xl counter-value" data-target="127" data-suffix="+">0+</p>
+        <p class="font-heading font-black text-accent text-2xl sm:text-3xl md:text-4xl counter-value" data-target="1200" data-suffix="+">0+</p>
         <p class="dark:text-white/35 text-text-light-muted text-[10px] sm:text-xs font-semibold mt-1 uppercase tracking-wider">Clientes Atendidos</p>
       </div>
       <div class="py-7 md:py-10 text-center scroll-reveal" style="transition-delay:100ms">
@@ -623,7 +620,7 @@
       <!-- Service 6 -->
       <article class="scroll-reveal group relative card-glow light-card-shadow dark:bg-surface-elevated/50 bg-white rounded-2xl p-5 sm:p-6 md:p-7 dark:border-surface-border/40 border-gray-200 border dark:hover:border-accent/30 hover:border-accent/40 transition-all duration-500 micro-hover dark:hover:shadow-2xl" style="transition-delay:400ms">
         <span class="service-num">06</span>
-        <span class="absolute top-4 right-4 text-[9px] font-bold uppercase tracking-wider bg-red-500/10 text-red-500 dark:text-red-400 px-2.5 py-1 rounded-full flex items-center gap-1"><span class="w-1.5 h-1.5 bg-red-500 dark:bg-red-400 rounded-full animate-pulse"></span>Urgente</span>
+        <span class="absolute top-4 right-4 text-[9px] font-bold uppercase tracking-wider bg-accent/10 text-accent px-2.5 py-1 rounded-full flex items-center gap-1"><span class="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span>Urgente</span>
         <div class="w-12 h-12 dark:bg-accent/10 bg-accent/10 group-hover:bg-accent rounded-xl flex items-center justify-center mb-4 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/20">
           <svg class="w-6 h-6 text-accent group-hover:text-brand-black transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
@@ -704,7 +701,7 @@
             <svg class="w-3.5 h-3.5 text-accent fill-accent" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <svg class="w-3.5 h-3.5 text-accent fill-accent" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
-          <p class="dark:text-white/30 text-text-light-muted text-[10px] mt-1">127 avaliações</p>
+          <p class="dark:text-white/30 text-text-light-muted text-[10px] mt-1">1.200 avaliações</p>
         </div>
         <div class="flex-1 space-y-1.5">
           <div class="flex items-center gap-2"><span class="text-[10px] dark:text-white/30 text-text-light-muted w-3">5</span><div class="flex-1 rating-bar"><div class="rating-fill" style="width:92%"></div></div></div>
@@ -758,10 +755,10 @@
           <div class="absolute -bottom-2 -right-2 w-14 h-14 border-b-2 border-r-2 border-accent rounded-br-2xl"></div>
           <div class="relative rounded-2xl overflow-hidden shadow-2xl dark:shadow-accent/5 shadow-gray-300/30 aspect-[4/5]">
             <img src="https://raw.githubusercontent.com/creativethb/chaveirovl/main/img/sobre%20mim.jpg" alt="Felipe — Felipão Chaveiro" class="w-full h-full object-cover" loading="lazy" width="400" height="500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-black/70 via-transparent to-transparent"></div>
-            <div class="absolute bottom-4 left-4 right-4 flex items-center gap-3 bg-brand-black/60 backdrop-blur-md rounded-xl p-3 border border-white/10">
-              <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-brand-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
-              <div><p class="text-white font-bold text-sm">Técnico Credenciado</p><p class="text-white/50 text-xs">Felipe — FELIPÃO CHAVEIRO</p></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-black/40 via-transparent to-transparent"></div>
+            <div class="absolute bottom-3 right-3 flex items-center gap-2 bg-brand-black/70 backdrop-blur-md rounded-lg px-2.5 py-1.5 border border-white/10 shadow-lg">
+              <div class="w-6 h-6 bg-accent rounded-md flex items-center justify-center shrink-0"><svg class="w-3.5 h-3.5 text-brand-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+              <div><p class="text-white font-bold text-[10px] sm:text-[11px] leading-tight">Técnico Credenciado</p><p class="text-white/40 text-[8px] sm:text-[9px] leading-tight">Felipe</p></div>
             </div>
           </div>
         </div>
